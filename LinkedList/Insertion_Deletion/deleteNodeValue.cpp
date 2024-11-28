@@ -46,14 +46,14 @@ void traversal(Node* head)
     }
 }
 
-Node* deleteNode(Node* head,int k)
+Node* deleteNode(Node* head,int value)
 {
     int deletedEl;
     if(head==NULL)
     {
         return head;
     }
-    if(k==1)
+    if(head->data==value)
     {
         Node* temp=head;
         head=head->next;
@@ -61,14 +61,12 @@ Node* deleteNode(Node* head,int k)
         free(temp);
         return head;
     }
-    int count=0;
     Node* temp= head ;
     Node* prev=NULL;
 
     while(temp!=NULL)
     {
-        count++;
-        if(count==k)
+        if(temp->data==value)
         {
             prev->next=prev->next->next;
             deletedEl=temp->data;
@@ -89,12 +87,12 @@ int main()
     traversal(head);
     cout<<endl;
 
-    int k;
+    int value;
 
-    cout<<"Enter a node number to be deleted: ";
-    cin>>k;
+    cout<<"Enter value for node to be deleted: ";
+    cin>>value;
 
-    head =deleteNode(head,k);
+    head =deleteNode(head,value);
     traversal(head);
 
      return 0;
