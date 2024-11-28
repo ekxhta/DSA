@@ -58,7 +58,7 @@ Node* deleteNode(Node* head,int k)
         Node* temp=head;
         head=head->next;
         deletedEl=temp->data;
-        free(temp);
+        free(temp); 
         return head;
     }
     int count=0;
@@ -90,7 +90,6 @@ int main()
     cout<<endl;
 
     int k;
-
     cout<<"Enter a node number to be deleted: ";
     cin>>k;
 
