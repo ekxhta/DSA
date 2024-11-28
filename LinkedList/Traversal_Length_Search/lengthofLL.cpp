@@ -26,7 +26,7 @@ int length(Node* head)
 {
     int length=0;
     Node* temp =head;
-    while(temp->next!=nullptr)
+    while(temp)
     {
         cout<<temp->data<<" ";
         temp=temp->next;
