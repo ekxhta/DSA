@@ -45,10 +45,17 @@ void traversal(Node* head)
     }
 }
 
-Node* insertHead(Node* head, int value)
+Node* insertTail(Node* head, int value)
 {
-    Node* temp=new Node(value,head);
-    return temp;
+    Node* temp =head;
+    while(temp->next!=nullptr)
+    {
+        temp=temp->next;
+    }
+    Node* tail=new Node(value,nullptr);
+    temp->next=tail;
+
+    return head;
 }
 
 int main()
@@ -60,7 +67,7 @@ int main()
     cout<<"Enter value for new head node: ";
     cin>>val;
   
-    head=insertHead(head,val);
+    head=insertTail(head,val);
     traversal(head);
     return 0;
 
