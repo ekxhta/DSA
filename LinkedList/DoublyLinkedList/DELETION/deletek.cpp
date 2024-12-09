@@ -94,8 +94,6 @@ int main()
     cin >> k;
 
     head = deleteNode(head, k);
-
-    cout << "Updated list: ";
    
 
 }
